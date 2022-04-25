@@ -6,9 +6,9 @@
 
 	<title>Svelte app</title>
 
-	<link rel='icon' type='image/png' href="{{url_for('static', filename='svelte/js/public/favicon.png')}}">
-	<link rel='stylesheet' href="{{url_for('static', filename='svelte/js/public/global.css')}}">
-	<link rel='stylesheet' href="{{url_for('static', filename='svelte/js/public/build/bundle.css')}}">
+	<link rel='icon' type='image/png' href="{{url_for('static', filename='svelte/public/favicon.png')}}">
+	<link rel='stylesheet' href="{{url_for('static', filename='svelte/public/global.css')}}">
+	<link rel='stylesheet' href="{{url_for('static', filename='svelte/public/build/bundle.css')}}">
   
   <script lang="javascript">
     {{ inertia.include_router() }}
@@ -17,7 +17,7 @@
   <body>
     <div id="app" data-page='{{ page | tojson }}'></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" defer></script>
-    <script defer src="{{url_for('static', filename='svelte/js/public/build/bundle.js')}}"></script>
+    <script defer src="{{url_for('static', filename='svelte/public/build/bundle.js')}}"></script>
     <!-- <h1>Test Text in Base.html</h1> -->
   </body>
 </html>
