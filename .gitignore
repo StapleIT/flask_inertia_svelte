@@ -1,0 +1,9 @@
+
+# gitignore
+
+**/__pycache__/
+**/venv/
+**/.vscode/
+
+**/node_modules/
+**/public/build/
