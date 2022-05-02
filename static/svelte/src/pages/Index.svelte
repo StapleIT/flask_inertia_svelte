@@ -1,4 +1,4 @@
-<script context="module">
+<script>
     export let fake_data = {};
 </script>
 

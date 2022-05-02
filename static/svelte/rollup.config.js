@@ -1,12 +1,14 @@
 import svelte from "rollup-plugin-svelte";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
+import dynamicImportVars from "@rollup/plugin-dynamic-import-vars";
 // addded because needed by inertia.js
 import rollupJson from "rollup-plugin-json";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import css from "rollup-plugin-css-only";
 import replace from "rollup-plugin-replace";
+import { babel } from "@rollup/plugin-babel";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -74,6 +76,12 @@ export default {
         }),
 
         commonjs(),
+
+        // as per Inertia.js website, installed babel plugin plugin-syntax-dynamic-import, but then seems you need this rollup plugin
+        babel({ babelHelpers: "bundled" }),
+
+        //added to try solve problem with dynamic imports of svelte pages failing with flask and inertia.js
+        // dynamicImportVars(),
 
         //added for inertia.js Axios communications
         rollupJson(),

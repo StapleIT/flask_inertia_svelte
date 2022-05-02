@@ -6,6 +6,10 @@ SECRET_KEY = "secret"
 # `base.html` template will be used as inertia default template
 INERTIA_TEMPLATE = "base.html"
 
+# import mimetypes
+
+# mimetypes.add_type("text/html", ".svelte")
+
 # init the app setting `template_folder` and `static_folder`
 app = Flask(
     __name__,
